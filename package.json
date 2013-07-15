@@ -4,9 +4,13 @@
   "author": "Brian McKenna <brian@brianmckenna.org> (http://brianmckenna.org/)",
   "homepage": "http://emu.brianmckenna.org/",
   "license": "MIT",
+  "version": "0.0.2",
+  "keywords": [
+    "documentation"
+  ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/pufuwozu/emu.js.git"
+    "url": "git://github.com/puffnfresh/emu.js.git"
   },
   "bin": {
     "emu": "./emu"
@@ -14,13 +18,11 @@
   "dependencies": {
     "esprima": "~1.0.0"
   },
-  "keywords": [
-    "documentation"
-  ],
-  "main": "index.js",
-  "version": "0.0.2",
   "devDependencies": {
     "tape": "~1.0.4",
     "fantasy-promises": "~0.1.0"
+  },
+  "scripts": {
+    "test": "node test/all.js"
   }
 }
