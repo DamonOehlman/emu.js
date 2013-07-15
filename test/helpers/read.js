@@ -1,19 +1,16 @@
-var Promise = require('fantasy-promises'),
+var Promise = require('pacta').Promise,
     path = require('path'),
     fs = require('fs'),
     emu = require('../../');
 
 module.exports = function(name) {
-    return new Promise(function(resolve) {
-        var stub = name.replace(/\.js$/, ''),
-            fullPath = path.resolve(__dirname, '..', 'stubs', stub + '.js');
+    var p = new Promise(),
+        stub = name.replace(/\.js$/, ''),
+        fullPath = path.resolve(__dirname, '..', 'stubs', stub + '.js');
 
-        fs.readFile(fullPath, 'utf8', function(err, data) {
-            if (err) {
-                return resolve(err);
-            }
-
-            resolve(emu.getComments(data));
-        });
+    fs.readFile(fullPath, 'utf8', function(err, data) {
+        p.resolve(data && emu.getComments(data));
     });
+
+    return p;
 }
