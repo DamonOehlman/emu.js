@@ -18,5 +18,9 @@
     "documentation"
   ],
   "main": "index.js",
-  "version": "0.0.2"
+  "version": "0.0.2",
+  "devDependencies": {
+    "tape": "~1.0.4",
+    "fantasy-promises": "~0.1.0"
+  }
 }
